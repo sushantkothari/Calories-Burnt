@@ -5,11 +5,12 @@ import gdown
 import pickle
 import os
 
-# URL of your file from Google Drive
-url = 'https://drive.google.com/file/d/1imvIjMo4xB15Sjo9HRr25R9LAOMXgV1I/view?usp=sharing'
+# Google Drive file ID and download URL
+file_id = '1imvIjMo4xB15Sjo9HRr25R9LAOMXgV1I'
+url = f'https://drive.google.com/uc?id={file_id}'
 output = 'stacking_regressor.pkl'
 
-# Download the file if it doesn't exist locally
+# Download the file if it doesn't already exist
 if not os.path.exists(output):
     gdown.download(url, output, quiet=False)
 
